@@ -1,0 +1,104 @@
+@media (min-width: 880px) {
+  .MainBanner-Container {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: bisque;
+    background-image: url("../../../../assets/img/panorama.jpg");
+    background-position: 50% 50%;
+    background-size: 300%;
+    z-index: 0;
+  }
+  .text-box {
+    width: 40%;
+    position: absolute;
+    display: block;
+    margin-left: 30vw;
+    margin-top: 100px;
+    text-align: center;
+  }
+  .header-primary {
+    color: saddlebrown;
+  }
+  .header-primary-main  {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+  }
+  .header-primary-sub  {
+    display: block;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 880px) {
+  .card-sign-up {
+    display: none;
+  }
+  .MainBanner-Container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-color: bisque;
+    background-image: url("../../../../assets/img/panorama.jpg");
+    background-position: 50% 50%;
+    background-size: 500%;
+  }
+  .text-box {
+    width: 50%;
+    position: absolute;
+    margin-left: 25vw;
+    margin-top:10%;
+    text-align: center;
+  }
+  .header-primary {
+    color: saddlebrown;
+  }
+  .header-primary-main  {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
+  .header-primary-sub  {
+    display: block;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+}

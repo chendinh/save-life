@@ -1,13 +1,42 @@
 const connections = require('../../config/mongodb').master;
+const {STATUS} = require('../../config/const').USER;
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const users_schema = require('./schema').users;
 
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const usersSchema = new Schema(users_schema, { timestamps: true });
+const users = {
+  username: {type: String, unique: true, required: true},
+  password: {type: String, required: true},
+  status: {type: String, required: true, default: STATUS.ACTIVE},
+  role: {type: String, required: true},
+  firstName: {type: String},
+  lastName: {type: String},
+  birthDay: {type: Date},
+  email: {
+    type: String,
+    trim: true,
+    lowercase: true,
+    unique: true,
+    required: true
+    // required: 'Email address is required',
+    // validate: [validateEmail, 'Please fill a valid email address'],
+    // match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+  },
+  phoneNumber: {type: String},
+  gender: {type: String},
+  position: {type: String},
+  information: {
+    nameCompany: {type: String},
+    address: {type: String},
+    taxCode: {type: String}
+  },
+	avatar: {type: String}
+};
+
+const usersSchema = new Schema(users, { timestamps: true });
 
 
 // usersSchema.method('comparePassword',  async function (password) {});

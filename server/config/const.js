@@ -5,10 +5,16 @@ module.exports = {
 			DOCTOR: 'DOCTOR',
 			GUEST: 'GUEST',
 			CUSTOMER: 'CUSTOMER',
-			ADVISER: 'ADVISER'
+			ADVISER: 'ADVISER',
+			COMPANY: 'COMPANY'
 		},
 		STATUS: {
-			APPROVED: 'APPROVED'
+			ACTIVE: 'ACTIVE',
+      INACTIVE: 'INACTIVE'
+		},
+		STATUS_TYPE: {
+			COMMENT: 'COMMENT',
+      REPLY: 'REPLY'
 		},
 		GENDER: {
 			MALE: 'MALE',

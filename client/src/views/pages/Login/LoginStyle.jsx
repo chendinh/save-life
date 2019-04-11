@@ -1,4 +1,4 @@
-import backgroundImage from "./imgs/background.jpg";
+import backgroundImage from "../../../assets/img/bg7.jpg";
 
 const LoginStyle = {
   Container: {
@@ -6,19 +6,22 @@ const LoginStyle = {
     position: "relative",
     marginLeft: "auto",
     marginRight: "auto",
-    top: "30%",
+    top: "20%",
     padding: "40px",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(139, 69, 19, 0.7)",
     boxSizing : "border-box",
-    boxShadow: "0 15px 25px rgba(0,0,0,.5)",
+    boxShadow: "0 15px 25px rgba(0,0,0,0.8)",
     borderRadius: "10px",
-    "@media (max-width: 599.95px)": {
+    "@media (max-width: 799.95px)": {
       width: "90%",
       padding: "10%",
+      marginLeft: "5%"
     },
-    "@media (min-width: 600px)": {
-      width: "30%",
+    "@media (min-width: 800px)": {
+      width: "40%",
       minWidth: "400px",
+      marginLeft: "30%",
+      marginRight: "30%",
     },
   },
   Title:{
@@ -27,7 +30,7 @@ const LoginStyle = {
     fontFamily: "Helvetica, sans-serif",
     fontSize: "2em",
     fontWeight: "500",
-    color: "rgba(162, 226, 255, 1)",
+    color: "white",
   },
   InputBox: {
     position: "relative",
@@ -38,12 +41,12 @@ const LoginStyle = {
     fontSize: "16px",
     width: "90%",
     border: "none",
-    borderBottom: "1px solid rgba(162, 226, 255, 0.8)",
+    borderBottom: "2px solid rgba(139, 69, 19, 0.8)",
     outline: "none",
-    color: "rgba(255, 255, 255, 0.8)",
+    color: "white",
     backgroundColor: "transparent",
     "&::placeholder": {
-      color: "rgba(162, 226, 255, 0.5)",
+      color: "saddlebrown",
       fontSize: "18px",
     },
   },
@@ -52,8 +55,7 @@ const LoginStyle = {
     padding: "10px 0",
     fontSize: "16px",
     pointerEvents: "none",
-    fontSize: "16px",
-    color: "rgba(162, 226, 255, 0.9)",
+    color: "white",
     transition: ".5s",
     "&:hover": {
       color: "white",
@@ -62,8 +64,8 @@ const LoginStyle = {
   CustomButton: {
     padding: "5px",
     width: "100%",
-    color: "rgba(162, 226, 255, 1)",
-    backgroundColor: "rgba(6, 92, 132, 1)"
+    color: "white",
+    backgroundColor: "saddlebrown"
   },
   IconOr: {
     display: "block",
@@ -73,6 +75,7 @@ const LoginStyle = {
     marginTop: "10px",
   },
   pageHeader: {
+    paddingTop: "70px",
     backgroundImage: "url(" + backgroundImage + ")",
     backgroundSize: "cover",
     backgroundPosition: "top center",

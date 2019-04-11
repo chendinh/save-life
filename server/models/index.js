@@ -10,5 +10,4 @@ fs.readdirSync(normalizedPath).forEach(function(file) {
     models[model.modelName] = model
 });
 
-
-module.exports = models
+module.exports = models;

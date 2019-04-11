@@ -1,0 +1,13 @@
+.project-card-container:hover {
+  box-shadow: 10px 20px rgba(24, 1, 0.5, 0.3);
+}
+.project-card-container {
+  line-height: 16px;   
+  box-shadow: 5px 0px rgba(24, 1, 1, 0.5);
+}
+.project-card-about {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75ch;
+}

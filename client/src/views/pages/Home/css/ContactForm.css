@@ -1,0 +1,62 @@
+.ContactForm-Container {
+  display: grid;
+  grid-template-rows: 85% auto;
+  grid-gap: 20px;
+  width: 100%;
+  height: 500px;
+}
+.ContactForm-input-textarea {
+  width: 90%;
+  padding: 5%;
+  background-color: rgb(245, 228, 228);
+  border: 0px solid saddlebrown;
+  font-size: 20px;
+  color: saddlebrown;
+  font-style: italic;
+}
+.ContactForm-input-textarea::placeholder {
+  border: 0px solid saddlebrown;
+  font-size: 20px;
+  color: saddlebrown;
+  font-style: italic;
+}
+.ContactForm-input-textarea:focus {
+  border: 1px solid saddlebrown;
+  background-color: whitesmoke;
+}
+.Row-Email-Submit {
+  display: grid;
+  grid-template-columns: 70% auto;
+  grid-gap: 20px;
+}
+.Row-Email-Submit input {
+  background-color: rgb(245, 228, 228);
+  border: 0px solid saddlebrown;
+  font-size: 20px;
+  color: saddlebrown;
+  padding-left: 5%;
+}
+.Row-Email-Submit input::placeholder {
+  font-weight: 700;
+  font-size: 15px;
+  color: saddlebrown;
+  font-style: italic;
+}
+
+.Row-Email-Submit button {
+  background-color: rgb(245, 228, 228);
+  border: 0px none saddlebrown;
+  font-weight: 700;
+  font-size: 15px;
+  color: saddlebrown;
+}
+
+@media (max-width: 1000px) {
+  .ContactForm-Container {
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+}

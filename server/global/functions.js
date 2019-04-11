@@ -8,15 +8,16 @@ ResponeError = function(req, res, err, errorCode) {
     errorMessage: isInteger(parseInt(errorCode)) ? ErrorMessage[errorCode] : errorCode, 
     result: null
   };
-
+  console.log("err:", err);
+  
   return res.json(dataRespone);
-}
+};
 
 ResponeSuccess = function(req, res, data) {
   const dataRespone = {errorCode : ErrorCode.API_SUCCESS, errorMessage: "", result: data};
 
   return res.json(dataRespone);
-}
+};
 
 HandleError = function(error) {
   // const errorCode = parseInt(error.mesage);
@@ -38,4 +39,4 @@ HandleError = function(error) {
   }
 
   throw new Error(error.message);
-}
+};

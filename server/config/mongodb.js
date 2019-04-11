@@ -2,7 +2,12 @@ const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 mongoose.Promise = global.Promise;
 
-const mongodb_master_connection = mongoose.createConnection(CONFIG.mongodb_url, { 
+console.log(CONFIG.mongodb_url);
+const mongodb_master_connection = mongoose.createConnection(CONFIG.mongodb_url, {
+  // auth: {
+  //   user: 'ducnghia',
+  //   password: 'admin@123'
+  // },
     useNewUrlParser: true
 });
 
