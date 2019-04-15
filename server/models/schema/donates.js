@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const donates = {
-  userId: {type: Schema.Types.ObjectId, ref: 'users', required: true},
+  userId: {type: Schema.Types.ObjectId, ref: 'Users', required: true},
   projectId: {type: Schema.Types.ObjectId, ref: 'projects', required: true},
   amount: {type: Number, required: true},
   note: {type: String},

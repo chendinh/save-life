@@ -1,9 +1,9 @@
 const {Donates} = require('../models');
 
-const getDonate = async function (projectId) {
+const getDonate = async function (filter, limit, skip) {
   try{
     
-    const donate = await Donates.findOne({projectId: projectId});
+    const donate = await Donates.findOne(filter).populate('userId').limit(limit).skip(skip);
   
     return donate;
     

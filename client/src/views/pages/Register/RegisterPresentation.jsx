@@ -1,24 +1,17 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from "prop-types";
+import React, {Component, Fragment} from 'react';
+import Navbar from "./sections/Navbar.jsx";
+import RegisterStyle from "./RegisterStyle.jsx";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
-//import IconButton from "@material-ui/core/IconButton";
-// import OrIcon from "@material-ui/icons/UnfoldMore";
-// import Visibility from "@material-ui/icons/Visibility";
-// import VisibilityOff from "@material-ui/icons/VisibilityOff";
-// import IconButton from "@material-ui/core/IconButton";
+import RoleSelect from "../../Wigets/RoleSelect.jsx";
 
-// import local file
-import loginStyle from "./LoginStyle.jsx";
-import Navbar from "./sections/Navbar.jsx";
-
-class LoginPresentation extends Component {
+class RegisterPresentation extends Component {
   render() {
     let { classes, fieldErrors } = this.props;
     const Title = () => (
       <div id="status" className={classes.Title}>
-        Welcome
+        Sign Up
       </div>
     )
 
@@ -37,12 +30,11 @@ class LoginPresentation extends Component {
         {props.content}
       </Button>
     )
-
-    return (
+    return(
       <Fragment>
         <Navbar/>
-        {/* This is Background */}
-        <div
+         {/* This is Background */}
+         <div
           name='background'
           className={classes.pageHeader}
         >
@@ -52,7 +44,7 @@ class LoginPresentation extends Component {
             className={classes.Container}
           >
             <Title/>
-            <p style={{ color: 'white' }}>
+            {/* <p style={{ color: 'white' }}>
               {
                 fieldErrors.usernameError 
                   ? fieldErrors.usernameError
@@ -62,7 +54,7 @@ class LoginPresentation extends Component {
                     //   ? "Username/Password is invalid"
                       // : ""
               }
-            </p>
+            </p> */}
             <form>
               <div className={classes.InputBox}>
                 <Label content="Username"/>
@@ -86,8 +78,28 @@ class LoginPresentation extends Component {
                   className={classes.Input}
                 /> 
               </div>
+              <div className={classes.InputBox}>
+                <Label content="Personal Email"/>
+                <input
+                  name="email"
+                  type="text"
+                  onChange={this.props.onChange}
+                  value={this.props.fields.email}
+                  placeholder=""
+                  className={classes.Input}
+                /> 
+              </div>
+              <Label content="Your are"/>
+              <RoleSelect
+                genderIs={this.props.fields.role}
+                labelText="Your are"
+                handleOnClickDonor={this.props.handleOnClickDonor}
+                handleOnClickCompany={this.props.handleOnClickCompany}
+                textError={fieldErrors.roleError}
+              />
             </form>
-            <CustomButton content="Login"
+            <br/>
+            <CustomButton content="Register"
               onClick={this.props.onSubmit}
             />
             {/* <OrIcon className={classes.IconOr}/> */}
@@ -109,13 +121,7 @@ class LoginPresentation extends Component {
           
         </div>
       </Fragment>
-    );
+    )
   }
 }
-
-// xs={11} sm={11} md={5} lg={5} xl={5}
-LoginPresentation.propTypes = {
-  classes: PropTypes.object,
-};
-
-export default withStyles(loginStyle)(LoginPresentation);
+export default withStyles(RegisterStyle)(RegisterPresentation);

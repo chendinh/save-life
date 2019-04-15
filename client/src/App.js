@@ -19,7 +19,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           {indexRoutes.map((prop, key) => {
-            console.log('history:',prop);
+            // console.log('history:',prop);
             if (prop.path === '/') {
               return <Route exact path={prop.path} key={key} component={prop.component} />;
             }

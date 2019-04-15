@@ -10,6 +10,7 @@ import MenuList from '@material-ui/core/MenuList';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -73,21 +74,46 @@ class MenuListComposition extends React.Component {
                 }}
               >
                 <Paper style={{ zIndex:2 }}>
-                  <ClickAwayListener onClickAway={this.handleClose}>
-                    <MenuList>
-                      <MenuItem 
-                        style={{ color: 'saddlebrown', fontSize: '15px'}} 
-                        onClick={this.handleClose}>Profile  
-                      </MenuItem>
-                      <MenuItem 
-                        style={{ color: 'saddlebrown', fontSize: '15px'}} 
-                        onClick={this.handleClose}>My Project 
-                      </MenuItem>
-                      <MenuItem 
-                        style={{ color: 'saddlebrown', fontSize: '15px'}} 
-                        onClick={this.handleClose}>Log out 
-                      </MenuItem>
-                    </MenuList>
+                <ClickAwayListener onClickAway={this.handleClose}>
+                    {
+                      localStorage.getItem("userRole") === "ADMIN"
+                        ? 
+                        <MenuList>
+                          <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                            <MenuItem 
+                              style={{ color: 'saddlebrown', fontSize: '15px'}} 
+                              onClick={this.handleClose}>Dashboard  
+                            </MenuItem>
+                          </Link>
+                          <Link to="/login" style={{ textDecoration: 'none' }}>
+                            <MenuItem 
+                              style={{ color: 'saddlebrown', fontSize: '15px'}} 
+                              onClick={() => localStorage.clear()}>Log out 
+                            </MenuItem>
+                          </Link>
+                        </MenuList>
+                        : 
+                        <MenuList>
+                          <Link to="/profile" style={{ textDecoration: 'none' }}>
+                            <MenuItem 
+                              style={{ color: 'saddlebrown', fontSize: '15px'}} 
+                              onClick={this.handleClose}>Profile  
+                            </MenuItem>
+                          </Link>
+                          <Link to="/profile" style={{ textDecoration: 'none' }}>
+                            <MenuItem 
+                              style={{ color: 'saddlebrown', fontSize: '15px'}} 
+                              onClick={this.handleClose}>My Project 
+                            </MenuItem>
+                          </Link>
+                          <Link to="/login" style={{ textDecoration: 'none' }}>
+                            <MenuItem 
+                              style={{ color: 'saddlebrown', fontSize: '15px'}} 
+                              onClick={() => localStorage.clear()}>Log out 
+                            </MenuItem>
+                          </Link>
+                        </MenuList>
+                    }
                   </ClickAwayListener>
                 </Paper>
               </Grow>

@@ -1,0 +1,57 @@
+
+@media (min-width: 780px) {
+  .Navbar-Container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 150px;
+    z-index: 2;
+  }
+  .Logo {
+    grid-column: 1;
+    background-image: url('../../../../assets/img/logoversion2.png');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    max-width: 600px;
+    max-height: 200px;
+  }
+  .Menu {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .Word {
+    margin-right: 6%;
+    color: saddlebrown;
+    font-size: 15px;
+  }
+}
+@media (max-width: 780px) {
+  .Navbar-Container {
+    display: grid;
+    grid-template-columns: 100%;
+    height: 170px;
+    width: 70%;
+    margin-left: 15%;
+  }
+  .Logo {
+    background-image: url('../../../../assets/img/logoversion2.png');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 25%;
+    max-width: 650px;
+    padding-top: 110px;
+  }
+  .Menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Word {
+    margin-right: auto;
+    margin-left: auto;
+    color: saddlebrown;
+    font-size: 5px;
+  }
+}

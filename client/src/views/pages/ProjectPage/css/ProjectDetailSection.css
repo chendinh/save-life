@@ -1,0 +1,63 @@
+.ProjectDetail-body-container {
+  display: block;
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Title */
+.ProjectDeatail-title-container {
+  display: block;
+  width: 100%;
+  height: 90px;
+  padding-top: 15px; 
+  /* background-color: aqua; */
+  /* word-break: break-all; */
+  border-top-color: black;
+  border-top: 2px solid rgba(139, 69, 19, 0.8);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 32px;
+  color: saddlebrown;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  line-break: auto;
+  white-space: "pre-wrap"
+}
+/* Information */
+.ProjectDeatail-information-container {
+  display: grid;
+  /* position: absolute; */
+  margin-top: 10px;
+  width: 100%;
+  grid-template-columns: 60% 36%;
+  grid-gap: 0% 4%;
+}
+.ProjectDeatail-information-grid-item-left {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 320px;
+}
+.ProjectDeatail-information-grid-item-right {
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  padding: 10px;
+  font-size: 30px;
+}
+.ProjectDeatail-information-grid-item-right-numbers-Container {
+  width: 100%;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-column-gap: 5%;
+  /* background-color: aqua; */
+}
+.ProjectDeatail-information-grid-item-right-numbers-Item {
+  /* background-color: red; */
+  height: 100%;
+  width: 100%;
+  font-size: 2.5vh;
+  font-family: "Fira Sans", sans-serif;
+  color: saddlebrown;
+}
+
+

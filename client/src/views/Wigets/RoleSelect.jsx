@@ -5,8 +5,8 @@ import GridContainer  from "components/Grid/GridContainer.jsx";
 import GridItem       from "components/Grid/GridItem.jsx";
 import {Button}       from '@material-ui/core';
 
-let GenderSection = (props) => {
-  let { classes, labelText, genderIs, handleOnClickMale, handleOnClickFemale, textError } = props;
+let RoleSelect = (props) => {
+  let { classes, labelText, genderIs, handleOnClickDonor, handleOnClickCompany, textError } = props;
   if (textError !== '') {
     labelText = textError
   }
@@ -15,16 +15,16 @@ let GenderSection = (props) => {
       <p className={classes.labelText}>{labelText}</p>
       <GridContainer justify = "center" style={{textAlign: "center"}}>
         <GridItem xs={6} sm={6} md={6} lg={6} xl={6}>
-        <div className={genderIs !== 'Male' ? classes.Gender : classes.ChoosedGender}>
-          <Button fullWidth name="Male" onClick={handleOnClickMale} >
-              Male
+        <div className={genderIs !== 'GUEST' ? classes.Gender : classes.ChoosedGender}>
+          <Button fullWidth name="GUEST" onClick={handleOnClickDonor} >
+              Donor
           </Button>
         </div>
         </GridItem>
         <GridItem xs={6} sm={6} md={6} lg={6} xl={6}>
-          <div className={genderIs !== 'Female' ? classes.Gender : classes.ChoosedGender}>
-            <Button fullWidth name="Female" onClick={handleOnClickFemale}>
-              Female
+          <div className={genderIs !== 'COMPANY' ? classes.Gender : classes.ChoosedGender}>
+            <Button fullWidth name="COMPANY" onClick={handleOnClickCompany}>
+              Company
             </Button>
           </div>
         </GridItem>
@@ -36,7 +36,7 @@ let GenderSection = (props) => {
 const styles = theme => ({
 // style for default design
   labelText: {
-    color: "#AAAAAA !important",
+    color: "#white !important",
     fontSize: "16px",
     fontFamily:"  \"Roboto\", \"Helvetica\" , \"Arial\" , sans-serif",
     fontWeight: "400",
@@ -45,13 +45,13 @@ const styles = theme => ({
   Gender: {
     padding: '5px',
     border: "solid 0.5px #AAAAAA",
-    color: "#AAAAAA !important",
+    color: "white !important",
   },
   ChoosedGender: {
     padding: '5px',
-    backgroundColor: "#AAAAAA",
-    color: "white !important"
+    backgroundColor: "white",
+    color: "#8b4513 !important"
   }
 });
 
-export default withStyles(styles)(GenderSection);
+export default withStyles(styles)(RoleSelect);

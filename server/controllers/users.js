@@ -95,8 +95,19 @@ const signIn = async function (req, res) {
   }
 };
 
+const statistic = async function (req, res) {
+  try {
+    const totalGuest = await userService.countData({role: ROLE.GUEST});
+    const totalCompany = await userService.countData({role: ROLE.COMPANY});
+    return ResponeSuccess(req, res, {totalGuest, totalCompany});
+  } catch (error) {
+    return ResponeError(req, res, error, error.message);
+  }
+};
+
 module.exports = {
   create,
   profile,
-  signIn
+  signIn,
+  statistic
 };

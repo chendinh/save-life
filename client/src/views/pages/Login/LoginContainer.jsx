@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Login from './LoginPresentation';
 import { observer } from "mobx-react"
 import UserStore from './LoginStore';
-import axios from 'axios';
+// import axios from 'axios';
 
 let stores = new UserStore();
 

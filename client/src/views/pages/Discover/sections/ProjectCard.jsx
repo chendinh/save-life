@@ -24,9 +24,16 @@ class ProjectCard extends Component {
       <Fragment>
         <Link 
           to={{
-            pathname: '/discover',
-            state: {
-              fromNotifications: "true"
+            // search: '?projectID='+project._id,
+            // hash: '#',
+            // pathname: '/project',
+            // // name: 'ProjectPageContainer',
+            // state: {
+            //   projectID: "213231231231232"
+            // }
+            pathname: `/project/${project._id}`,
+            state: { 
+              projectInfo: project
             }
           }}
           style={{ textDecoration: 'none' }}

@@ -1,5 +1,5 @@
-const { Projects } = require('../models');
-const { Donates } = require('../models');
+const { Projects, Categories, Countries } = require('../models');
+
 const {STATUS} = require('../config/const.js').USER;
 const {checkExitsProject} = require('../helper/utils.js');
 const {checkExitsCategory} = require('../helper/utils.js');
@@ -87,7 +87,70 @@ const recalculationProject = async function (data) {
     
     
   } catch (error) {
+    return HandleError(error);
+  }
+};
+
+const statistic = async function(pipeline) {
+  try {
+    const data = await Projects.aggregate(pipeline);
     
+    return data; 
+  } catch (error) {
+    return HandleError(error);
+  }
+};
+
+const statisticByCategories = async function(pipeline) {
+  try {
+    const categories = await Categories.find({status: STATUS.ACTIVE});
+
+    const promises = [];
+
+    categories.forEach(category => {
+      promises.push(Projects.countDocuments({
+        categoryId: category._id, status: STATUS.ACTIVE
+      }));
+    });
+
+    const counts = await Promise.all(promises);
+
+    const results = [];
+    for (let index = 0; index < categories.length; index++) {
+      const element = JSON.parse(JSON.stringify(categories[index]));
+      element.countProject = counts[index];
+      results.push(element);
+    }
+    
+    return results; 
+  } catch (error) {
+    return HandleError(error);
+  }
+};
+
+const statisticByCountries = async function(pipeline) {
+  try {
+    const countries = await Countries.find({});
+
+    const promises = [];
+
+    countries.forEach(country => {
+      promises.push(Projects.countDocuments({
+        countryId: country._id, status: STATUS.ACTIVE
+      }));
+    });
+
+    const counts = await Promise.all(promises);
+
+    const results = [];
+    for (let index = 0; index < countries.length; index++) {
+      const element = JSON.parse(JSON.stringify(countries[index]));
+      element.countProject = counts[index];
+      results.push(element);
+    }
+    
+    return results; 
+  } catch (error) {
     return HandleError(error);
   }
 };
@@ -97,5 +160,8 @@ module.exports = {
   create,
   update,
   countData,
-  recalculationProject
+  recalculationProject,
+  statistic,
+  statisticByCategories,
+  statisticByCountries
 };

@@ -1,4 +1,5 @@
 const { Users } = require('../models');
+const { STATUS } = require('../config/const.js').USER;
 
 const create = async function(data) {
 	try {
@@ -48,8 +49,21 @@ const authUser = async function(username, password) {
 	}
 };
 
+const countData = async function(filter) {
+	try {
+	  filter.status = STATUS.ACTIVE;
+	  const count = Users.countDocuments(filter);
+	  
+	  return count;
+	  
+	}catch (error) {
+	  return HandleError(error);
+	}
+};
+
 module.exports = {
 	create,
 	getById,
-	authUser
+	authUser,
+	countData
 };

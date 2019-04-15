@@ -22,9 +22,9 @@ const projects = {
   minPercentSell:{type: Number},
   commentsCount:{type: Number},
   images:[{type: String}],
-  countryId:{type: Schema.Types.ObjectId, ref: 'countries'},
-  userId:{type: Schema.Types.ObjectId, ref: 'users'},
-  categoryId:{type: Schema.Types.ObjectId, ref: 'categories'}
+  countryId:{type: Schema.Types.ObjectId, ref: 'Countries'},
+  userId:{type: Schema.Types.ObjectId, ref: 'Users'},
+  categoryId:{type: Schema.Types.ObjectId, ref: 'Categories'}
 };
 
 const projectsSchema = new Schema(projects, {timestamps: true });
