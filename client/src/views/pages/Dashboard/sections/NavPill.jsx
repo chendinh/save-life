@@ -35,14 +35,14 @@ class NavPill extends Component {
               tabButton: "Category List",
               tabIcon: Comment,
               tabContent: (
-                <DashboardCountryList/>
+                <DashboardCategoryList/>
               )
             },
             {
               tabButton: "Country List",
               tabIcon: Comment,
               tabContent: (
-                <DashboardCategoryList/>
+                <DashboardCountryList/>
               )
             }
           ]}

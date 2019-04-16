@@ -110,7 +110,6 @@ class ProjectDetailSection extends Component {
               marginTop: "10px",
               marginRight: "4%",
               border: "2px solid red",
-              fontWeight: "500"
             }}
           >
             Like

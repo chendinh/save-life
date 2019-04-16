@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Chart } from "react-charts";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -57,7 +56,7 @@ class TeamContainer extends React.Component {
             height: "300px"
           }}
         >
-          <Chart
+          {/* <Chart
             data={[
               {
                 label: "Series 1",
@@ -76,7 +75,7 @@ class TeamContainer extends React.Component {
               { primary: true, type: "linear", position: "bottom" },
               { type: "linear", position: "left" }
             ]}
-          />
+          /> */}
         </div>
         <TitleSection kind="Zoom picture"/>
         <div style={{ display: 'flex', alignItems: "center", alignContent: "center" }}>
