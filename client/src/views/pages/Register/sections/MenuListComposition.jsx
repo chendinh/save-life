@@ -100,7 +100,7 @@ class MenuListComposition extends React.Component {
                               onClick={this.handleClose}>Profile  
                             </MenuItem>
                           </Link>
-                          <Link to="/profile" style={{ textDecoration: 'none' }}>
+                          <Link to="/myproject" style={{ textDecoration: 'none' }}>
                             <MenuItem 
                               style={{ color: 'saddlebrown', fontSize: '15px'}} 
                               onClick={this.handleClose}>My Project 

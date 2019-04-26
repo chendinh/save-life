@@ -4,11 +4,16 @@ import ProjectDetailSection from './sections/ProjectDetailSection.jsx';
 
 class ProjectPagePresentation extends Component {
   render() {
-    const { projectInfo } = this.props;
+    const { projectInfo, DonateNow, handleDonateTrue, handleDonateFalse } = this.props;
     return (
       <Fragment>
         <Navbar/>
-        <ProjectDetailSection projectInfo={projectInfo}/>
+        <ProjectDetailSection 
+          projectInfo={projectInfo} 
+          DonateNow={DonateNow}
+          handleDonateTrue={handleDonateTrue}
+          handleDonateFalse={handleDonateFalse}
+        /> 
       </Fragment>
     );
   }

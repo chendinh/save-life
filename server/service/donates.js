@@ -3,7 +3,7 @@ const {Donates} = require('../models');
 const getDonate = async function (filter, limit, skip) {
   try{
     
-    const donate = await Donates.findOne(filter).populate('userId').limit(limit).skip(skip);
+    const donate = await Donates.find(filter).populate('userId').limit(limit).skip(skip);
   
     return donate;
     

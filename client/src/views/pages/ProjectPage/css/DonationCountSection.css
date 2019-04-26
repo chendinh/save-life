@@ -1,0 +1,7 @@
+.Donation-list-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  height: auto;
+  width: 70%;
+  margin: auto
+}

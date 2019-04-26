@@ -6,7 +6,7 @@ import DashboardCountryList from "./DashboardCountryList.jsx";
 import DashboardCategoryList from "./DashboardCategoryList.jsx";
 
 import { Comment, Work, FolderShared } from "@material-ui/icons"
-import _ from "lodash";
+// import _ from "lodash";
 
 class NavPill extends Component {
   render() {

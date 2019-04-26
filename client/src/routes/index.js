@@ -5,6 +5,7 @@ import DiscoverPage from "../views/pages/Discover/DiscoverContainer.jsx";
 import ProjectPageContainer from "../views/pages/ProjectPage/ProjectPageContainer.jsx";
 import RegisterPage from "../views/pages/Register/RegisterContainer.jsx";
 import DashboardPage from "../views/pages/Dashboard/DashboardContainer.jsx";
+import MyProjectPage from "../views/pages/MyProject/MyProjectContainer.jsx";
 
 var indexRoutes = [
   { path: "/register", name: "RegisterPage", component: RegisterPage },
@@ -13,6 +14,7 @@ var indexRoutes = [
   { path: "/about", name: "About", component: AboutUsPage },
   { path: "/discover", name: "DiscoverPage", component: DiscoverPage },
   { path: "/dashboard", name: "DashboardPage", component: DashboardPage },
+  { path: "/myproject", name: "MyProjectPage", component: MyProjectPage },
   { path: "/project/:projectID", name: "ProjectPageContainer", component: ProjectPageContainer}
 ];
 

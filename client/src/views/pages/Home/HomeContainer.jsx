@@ -4,7 +4,7 @@ import Navbar from "./sections/Navbar.jsx";
 import MainBanner from "./sections/MainBanner.jsx";
 import FeatureWorkSection from "./sections/FeatureWorkSection.jsx";
 import TeamSection from "./sections/TeamSection.jsx";
-import ContactSection from "./sections/ContactSection.jsx"
+// import ContactSection from "./sections/ContactSection.jsx"
 import "./HomeStyle.css"
 
 class HomeContainer extends Component {

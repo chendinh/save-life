@@ -38,6 +38,7 @@ const getAllOfMe = async function (req, res) {
     const skip = req.query.skip || 0;
     let count = 0;
     let projects = [];
+    let projectsTmp = [];
     
     if(user.role == ROLE.COMPANY) {
       count = await projectsService.countData({userId: user._id});
@@ -52,16 +53,35 @@ const getAllOfMe = async function (req, res) {
         {$skip: skip}
       ];
       let results = await donatesService.getWithAggregate(pipeline);
-  
+      
+      
       count = await donatesService.countWithAggregate(pipeline);
       
       if (results && results.length){
         projects = await Projects.populate(results, {path: '_id'});
-
+        
         projects = projects.map(pro => pro._id);
+        for(let i = 0; i < projects.length; i++){
+          let project = projects[i];
+          // Calculate total amount and process
+          if (project && project._id){
+            let pipelineCalculate = [
+              {$match: {userId: user._id, projectId: project._id}},
+              {$group: {_id: '$userId' , totalPercent: {$sum: '$percent'}, totalAmount: {$sum: '$amount'}}},
+              {$limit: limit},
+              {$skip: skip}
+            ];
+            let resultsCalculate = await donatesService.getWithAggregate(pipelineCalculate);
+            
+            project = JSON.parse(JSON.stringify(project));
+            project.totalAmountDonateToProject = resultsCalculate[0].totalAmount;
+            project.totalPercentDonateToProject = resultsCalculate[0].totalPercent;
+            projectsTmp.push(project);
+          }
+        }
+        projects = projectsTmp;
       }
     }
-    
     return ResponeSuccess(req, res, {projects, total: count});
     
   } catch (error) {

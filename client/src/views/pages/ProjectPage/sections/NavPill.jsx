@@ -34,17 +34,17 @@ class NavPill extends Component {
                 <DonationCountSection projectInfo={projectInfo}/>
               )
             },
-            {
-              tabButton: "Comments",
-              tabIcon: Comment,
-              tabContent: (
-                <span>
-                  <p>
-                    Comment section
-                  </p>
-                </span>
-              )
-            }
+            // {
+            //   tabButton: "Comments",
+            //   tabIcon: Comment,
+            //   tabContent: (
+            //     <span>
+            //       <p>
+            //         Comment section
+            //       </p>
+            //     </span>
+            //   )
+            // }
           ]}
         />
       </Fragment>

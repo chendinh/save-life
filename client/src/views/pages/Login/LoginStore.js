@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { decorate, observable, action, computed } from 'mobx';
-import ServiceUrl from '../../../../src/Config.js'
+// import ServiceUrl from '../../../../src/Config.js'
 import axios from 'axios';
 
 class LoginStore extends Component {

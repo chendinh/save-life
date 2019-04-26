@@ -71,8 +71,7 @@ class DashboardOverview extends Component {
           }
         ]
       };
-
-      
+ 
       let j =0;
       let statisticByCountries = []
       for (j = 0; j < response.data.result.statisticByCountries.length ; j++) { 

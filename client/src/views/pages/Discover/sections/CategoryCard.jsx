@@ -1,15 +1,15 @@
 import React, {Component, Fragment} from 'react';
 import "../css/CategoryCard.css";
-import DiscoverPage from "../DiscoverContainer.jsx";
+// import DiscoverPage from "../DiscoverContainer.jsx";
 
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+// import CardBody from "components/Card/CardBody.jsx";
 import imagesStyles from "assets/jss/material-kit-pro-react/imagesStyles.jsx";
 import { cardTitle } from "assets/jss/material-kit-pro-react.jsx";
 
@@ -20,7 +20,7 @@ const style = {
 
 class CategoryCard extends Component {
   render() {
-    const { classes, category, handleOnClick } = this.props;
+    const { category, handleOnClick } = this.props;
     return(
       <Fragment>
         <Button

@@ -8,6 +8,8 @@ class HomeContainer extends Component {
     this.state = { 
       categoryID: null,
       categoryName: null,
+      countryID: null,
+      countryName: null,
       isProjectListShow: false
     };
   }
@@ -22,6 +24,14 @@ class HomeContainer extends Component {
       isProjectListShow: true
     })
   }
+  handleSearchCountryOnClick = (e) => {
+    console.log(e);
+    this.setState({
+      countryID: e,
+      // countryName: e.name,
+      isProjectListShow: true
+    })
+  }
   handleOnLickDiscover = () => {
     this.setState({
       categoryID: null,
@@ -30,14 +40,16 @@ class HomeContainer extends Component {
     })
   }
   render() {
-    const { isProjectListShow, categoryID, categoryName } = this.state;
+    const { isProjectListShow, countryID, categoryID, categoryName } = this.state;
     return (
       <DiscoverPresentation 
         handleOnLickDiscover={this.handleOnLickDiscover}
         categoryName={categoryName}
         categoryID={categoryID}
+        countryID={countryID}
         isProjectListShow={isProjectListShow}
         handleOnClick={this.handleOnClick}
+        handleSearchCountryOnClick={this.handleSearchCountryOnClick}
       />
     );
   }
